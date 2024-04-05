@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Length Converter</title>
+  <link rel="stylesheet" href="task2.css">
+</head>
+
+<body>
+  <div class="main">
+    <h2>Length Converter</h2>
+    <selector class="types">
+      <div class="type">
+        <label><b>Decimeter:</b>
+          <input class="box" type="number" placeholder="in decimeter" id="dc"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Millimeter:</b>
+          <input class="box" type="number" placeholder="in millimeter" id="mm"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Centimeter:</b>
+          <input class="box" type="number" placeholder="in centimeter" id="cm"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Meter:</b>
+          <input class="box" type="number" placeholder="in meter" id="m" min="0"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Kilometer:</b>
+          <input class="box" type="number" placeholder="in Kilometer" id="km" min="0"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+      </div>
+      </label>
+      <div class="type">
+        <label><b>Feet:</b>
+          <input class="box" type="number" placeholder="in feet" id="ft" min="0"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Yard:</b>
+          <input class="box" type="number" placeholder="in yard" id="y" min="0"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+      <div class="type">
+        <label><b>Mile:</b>
+          <input class="box" type="number" placeholder="in mile" id="mi" min="0"
+            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+        </label>
+      </div>
+  </div>
+
+
+  <script>
+    function lengthConverter(source, valNum) {
+      valNum = parseFloat(valNum);
+      var dc = document.getElementById("dc");
+      var mm = document.getElementById("mm");
+      var cm = document.getElementById("cm");
+      var m = document.getElementById("m");
+      var km = document.getElementById("km");
+      var ft = document.getElementById("ft");
+      var y = document.getElementById("y");
+      var mi = document.getElementById("mi");
+
+      if (source == "dc") {
+        mm.value = (valNum * 100).toFixed(2);
+        cm.value = (valNum * 10).toFixed(2);
+        m.value = (valNum / 10).toFixed(2);
+        km.value = (valNum / 10000).toFixed(5);
+        ft.value = (valNum / 3.048).toFixed(3);
+        y.value = (valNum / 9.144).toFixed(3);
+        mi.value = (valNum / 16090).toFixed(6);
+
+      }
+      if (source == "mm") {
+        dc.value = (valNum / 100).toFixed(2);
+        cm.value = (valNum / 10).toFixed(4);
+        m.value = (valNum / 1000).toFixed(2);
+        km.value = (valNum / 1000000).toFixed(6);
+        ft.value = (valNum / 304.8).toFixed(4);
+        y.value = (valNum / 914.4).toFixed(4);
+        mi.value = (valNum / 0.000007405).toFixed(7);
+      }
+      if (source == "cm") {
+        dc.value = (valNum / 10).toFixed(2);
+        mm.value = (valNum * 10).toFixed(4);
+        m.value = (valNum / 100).toFixed(2);
+        km.value = (valNum / 100000).toFixed(6);
+        ft.value = (valNum / 30.48).toFixed(4);
+        y.value = (valNum / 91.44).toFixed(4);
+        mi.value = (valNum / 160900).toFixed(7);
+      }
+      if (source == "m") {
+        dc.value = (valNum * 10).toFixed(2);
+        cm.value = (valNum * 100).toFixed(4);
+        mm.value = (valNum * 1000).toFixed(2);
+        km.value = (valNum / 1000).toFixed(6);
+        ft.value = (valNum * 3.281).toFixed(4);
+        y.value = (valNum * 1.094).toFixed(4);
+        mi.value = (valNum / 1609).toFixed(7);
+      }
+      if (source == "km") {
+        dc.value = (valNum * 10000).toFixed(2);
+        cm.value = (valNum * 100000).toFixed(4);
+        m.value = (valNum * 1000).toFixed(2);
+        mm.value = (valNum * 1000000).toFixed(6);
+        ft.value = (valNum * 3281).toFixed(4);
+        y.value = (valNum * 1094).toFixed(4);
+        mi.value = (valNum / 1.609).toFixed(7);
+      }
+      if (source == "ft") {
+        dc.value = (valNum * 3.048).toFixed(2);
+        cm.value = (valNum * 30.48).toFixed(4);
+        m.value = (valNum / 3.281).toFixed(2);
+        km.value = (valNum / 3281).toFixed(6);
+        mm.value = (valNum * 304.8).toFixed(4);
+        y.value = (valNum / 3).toFixed(4);
+        mi.value = (valNum / 5280).toFixed(7);
+      }
+      if (source == "y") {
+        dc.value = (valNum * 9.144).toFixed(2);
+        cm.value = (valNum * 91.44).toFixed(4);
+        m.value = (valNum / 0.9144).toFixed(2);
+        km.value = (valNum / 1094).toFixed(6);
+        mm.value = (valNum * 914.4).toFixed(4);
+        ft.value = (valNum * 3).toFixed(4);
+        mi.value = (valNum / 1760).toFixed(7);
+      }
+      if (source == "mi") {
+        dc.value = (valNum * 16093.4).toFixed(2);
+        cm.value = (valNum * 160900).toFixed(4);
+        m.value = (valNum * 1609.34).toFixed(2);
+        km.value = (valNum * 1.609).toFixed(6);
+        mm.value = (valNum * 1609000).toFixed(4);
+        ft.value = (valNum * 5280).toFixed(4);
+        y.value = (valNum * 1760).toFixed(7);
+      }
+
+
+
+    }
+
+  </script>
+</body>
+
+</html>
