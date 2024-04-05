@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#box {
+  margin: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(206, 173, 174);
+  height: 350px;
+  width: 550px;
+  padding: 20px;
+}
+
+body {
+  background-color: #C32148;
+}
+
+h1 {
+  text-align: center;
+  color: #D92121;
+
+}
+
+#lab {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+  color: blue
+}
+
+#num {
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #93DFB8;
+}
+
+.btn {
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #FFFF66;
+  color: #D92121;
+  font-size: 15px;
+  font-weight: 500;
+
+}
+
+#buttons {
+  padding-left: 150px;
+}
+
+#output {
+  text-align: center;
+  font-size: 25px;
+  font-style: oblique;
+  color: red;
+  margin: 2px;
+}
+
+.btn:hover {
+  background-color: #C32148;
+  color: #FFFF66;
+}
+
+#cnt {
+  text-align: center;
+  font-size: 25px;
+  color: purple;
+  font-weight: 500;
+}
